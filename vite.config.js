@@ -5,7 +5,11 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: './', // Necessário para GitHub Pages funcionar em subpastas/qualquer repositório
+  base: './', // Garante caminhos relativos para funcionar em https://anderitmo.github.io/CSV_Viewer/
+  build: {
+    outDir: 'dist',
+    emptyOutDir: true,
+  },
   test: {
     environment: 'jsdom',
     globals: true,
