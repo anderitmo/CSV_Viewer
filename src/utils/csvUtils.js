@@ -3,7 +3,7 @@ import * as XLSX from 'xlsx';
 
 /**
  * Detecta o melhor delimitador para uma amostra de texto CSV
- * @param {string} text
+ * @param {string} text 
  * @returns {string} Delimitador detectado (ex: ',', ';', '\t', '|')
  */
 export function detectDelimiter(text) {
@@ -138,8 +138,8 @@ export function parseCSV(text, options = {}) {
 
 /**
  * Converte headers e rows para tabela em formato Markdown
- * @param {string[]} headers
- * @param {Array<object|Array>} rows
+ * @param {string[]} headers 
+ * @param {Array<object|Array>} rows 
  * @param {boolean} isObjectRow Se as linhas são objetos com chaves iguais aos headers
  * @returns {string} Tabela Markdown
  */
@@ -170,10 +170,10 @@ export function convertToMarkdown(headers, rows, isObjectRow = true) {
 
 /**
  * Gera arquivo Excel e aciona download (.xlsx ou .xls)
- * @param {string[]} headers
- * @param {Array<object>} rows
- * @param {string} filename
- * @param {'xlsx'|'xls'} format
+ * @param {string[]} headers 
+ * @param {Array<object>} rows 
+ * @param {string} filename 
+ * @param {'xlsx'|'xls'} format 
  */
 export function exportToExcel(headers, rows, filename = 'dados', format = 'xlsx') {
   const data = [
@@ -202,9 +202,9 @@ export function exportToExcel(headers, rows, filename = 'dados', format = 'xlsx'
 
 /**
  * Faz download de texto como arquivo
- * @param {string} content
- * @param {string} filename
- * @param {string} mimeType
+ * @param {string} content 
+ * @param {string} filename 
+ * @param {string} mimeType 
  */
 export function downloadFile(content, filename, mimeType = 'text/plain;charset=utf-8;') {
   const blob = new Blob([content], { type: mimeType });
